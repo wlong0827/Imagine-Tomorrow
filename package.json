@@ -1,10 +1,9 @@
 {
-  "name": "appengine-hello-world",
-  "description": "Simple Hello World Node.js sample for Google App Engine Flexible Environment.",
+  "name": "imagine-tomorrow",
+  "description": "Imagine Tomorrow by William Long and Lucas Schuermann",
   "version": "0.0.1",
   "private": true,
-  "license": "Apache-2.0",
-  "author": "Google Inc.",
+  "author": "Lucas Schuermann",
   "repository": {
     "type": "git",
     "url": "https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git"
