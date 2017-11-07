@@ -1,14 +1,10 @@
 # Imagine Tomorrow
 
-This is the sample application for the
-[Quickstart for Node.js in the App Engine Flexible Environment][tutorial]
-tutorial found in the [Google App Engine Node.js Flexible Environment][appengine]
-documentation.
+This application runs on google cloud under the project `imagine-tomorrow`. It is deployed using the google app engine flexible environment.
 
 * [Setup](#setup)
 * [Running locally](#running-locally)
 * [Deploying to App Engine](#deploying-to-app-engine)
-* [Running the tests](#running-the-tests)
 
 ## Setup
 
@@ -43,12 +39,3 @@ With `npm`:
 or with `yarn`:
 
     yarn run deploy
-
-## Running the tests
-
-See [Contributing][contributing].
-
-[appengine]: https://cloud.google.com/appengine/docs/flexible/nodejs
-[tutorial]: https://cloud.google.com/appengine/docs/flexible/nodejs/quickstart
-[readme]: ../README.md
-[contributing]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/CONTRIBUTING.md
