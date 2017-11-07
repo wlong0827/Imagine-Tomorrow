@@ -1,4 +1,4 @@
-# Quickstart for Node.js in the App Engine Flexible Environment
+# Imagine Tomorrow
 
 This is the sample application for the
 [Quickstart for Node.js in the App Engine Flexible Environment][tutorial]
@@ -12,10 +12,8 @@ documentation.
 
 ## Setup
 
-Before you can run or deploy the sample, you need to do the following:
+Before you can run or deploy the website, you need to do the following:
 
-1.  Refer to the [appengine/README.md][readme] file for instructions on
-    running and deploying.
 1.  Install dependencies:
 
     With `npm`:
