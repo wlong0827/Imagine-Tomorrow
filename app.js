@@ -7,9 +7,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
-const Signature = require('.backend/models/test.js')
+const Signature = require('./backend/models/test.js');
 const app = express();
-const url = 'mongodb://deploy:CBY$qKHW/YUYHWAk8ky4@ds141434.mlab.com:41434/test'
+const uri = 'mongodb://deploy:fubviguibviqwbvkqj@ds141434.mlab.com:41434/test'
 //=========================//
 
 // Use the built-in express middleware for serving static files from './frontend'
@@ -29,7 +29,7 @@ app.post('/api/test', function(req, res) {
   });
 });
 
-mongoose.connect(url, function (err, db) {
+mongoose.connect(uri, { useMongoClient: true }).then(function (err, db) {
  if (err) {
    console.log('Unable to connect to the mongoDB server. Error:', err);
  } else {

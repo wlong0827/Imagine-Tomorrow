@@ -24,16 +24,24 @@
     "@google-cloud/storage": "^1.4.0",
     "body-parser": "^1.18.2",
     "browserify": "^14.5.0",
-    "express": "^4.15.4",
+    "express": "^4.16.2",
+    "express-validator": "^4.3.0",
     "guid": "0.0.12",
+    "moment": "^2.19.1",
     "mongoose": "^4.13.0",
+    "morgan": "^1.9.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "reactify": "^1.1.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "@google-cloud/nodejs-repo-tools": "1.4.17"
+    "@google-cloud/nodejs-repo-tools": "1.4.17",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^1.12.1"
   },
   "cloud-repo-tools": {
     "test": {
