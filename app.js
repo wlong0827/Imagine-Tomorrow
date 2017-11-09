@@ -62,6 +62,8 @@ app.post('/api/create_post', function(req, res) {
  });
 
 app.post('/auth/create', function(req, res) {
+  console.log(req.body);
+
   // confirm that user typed same password twice
   if (req.body.password !== req.body.passwordConf) {
     var err = new Error('Passwords do not match.');
@@ -71,9 +73,9 @@ app.post('/auth/create', function(req, res) {
   }
 
   if (req.body.email &&
-  req.body.username &&
-  req.body.password &&
-  req.body.passwordConf) {
+    req.body.username &&
+    req.body.password &&
+    req.body.passwordConf) {
     var userData = {
       email: req.body.email,
       username: req.body.username,
@@ -85,7 +87,7 @@ app.post('/auth/create', function(req, res) {
       if (err) {
         return res.send(err)
       } else {
-        return res.redirect('/'); // LVSTODO: landing page after login
+        return res.redirect('/vision-wall.html'); // LVSTODO: landing page after login
       }
     });
 
@@ -96,15 +98,15 @@ app.post('/auth/create', function(req, res) {
   }
 });
 app.post('/auth/login', function(req, res) {
-  if (req.body.logemail && req.body.logpassword) {
-    User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
+  if (req.body.email && req.body.password) {
+    User.authenticate(req.body.email, req.body.password, function (error, user) {
       if (error || !user) {
         var err = new Error('Wrong email or password.');
         err.status = 401;
         return res.send(err);
       } else {
         req.session.userId = user._id;
-        return res.redirect('/'); // LVSTODO: landing page after login
+        return res.redirect('/vision-wall.html'); // LVSTODO: landing page after login
       }
     });
   } else {
@@ -121,7 +123,7 @@ app.get('/auth/logout', function (req, res) {
       if (err) {
         return res.send(err);
       } else {
-        return res.redirect('/'); // LVSTODO: landing page after logout
+        return res.redirect('/vision-landing.html'); // LVSTODO: landing page after logout
       }
     });
   }
