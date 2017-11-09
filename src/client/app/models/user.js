@@ -1,4 +1,4 @@
-ar mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
@@ -15,10 +15,6 @@ var UserSchema = new mongoose.Schema({
     trim: true
   },
   password: {
-    type: String,
-    required: true,
-  },
-  passwordConf: {
     type: String,
     required: true,
   }
