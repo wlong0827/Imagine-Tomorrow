@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
-const Signature = require('./backend/models/test.js');
+const Post = require('./src/client/app/models/post.js');
 const app = express();
 const uri = 'mongodb://deploy:fubviguibviqwbvkqj@ds141434.mlab.com:41434/test'
 //=========================//
@@ -15,17 +15,14 @@ const uri = 'mongodb://deploy:fubviguibviqwbvkqj@ds141434.mlab.com:41434/test'
 // Use the built-in express middleware for serving static files from './frontend'
 app.use('/', express.static('src/client'));
 
-app.get('/api/test', function(req, res) {
-  Signature.find({}).then(eachOne => {
+app.get('/api/get_posts', function(req, res) {
+  Post.find({}).then(eachOne => {
     res.json(eachOne);
     })
   })
-app.post('/api/test', function(req, res) {
-  Signature.create({
-    guestSignature: req.body.SignatureOfGuest,
-    message: req.body.MessageofGuest,
-  }).then(signature => {
-    res.json(signature)
+app.post('/api/create_post', function(req, res) {
+  Post.create(req.body).then(retObj => {
+    res.json(retObj)
   });
 });
 
