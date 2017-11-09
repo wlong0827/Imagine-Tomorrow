@@ -61,7 +61,7 @@ app.post('/api/create_post', function(req, res) {
   });
  });
 
-app.post('/auth', function(req, res) {
+app.post('/auth/create', function(req, res) {
   // confirm that user typed same password twice
   if (req.body.password !== req.body.passwordConf) {
     var err = new Error('Passwords do not match.');
@@ -89,7 +89,14 @@ app.post('/auth', function(req, res) {
       }
     });
 
-  } else if (req.body.logemail && req.body.logpassword) {
+  } else {
+    var err = new Error('All fields required.');
+    err.status = 400;
+    return next(err);
+  }
+});
+app.post('/auth/login', function(req, res, next) {
+  if (req.body.logemail && req.body.logpassword) {
     User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
       if (error || !user) {
         var err = new Error('Wrong email or password.');
@@ -107,14 +114,14 @@ app.post('/auth', function(req, res) {
   }
 });
 // GET for logout logout
-app.get('/logout', function (req, res, next) {
+app.get('/auth/logout', function (req, res, next) {
   if (req.session) {
     // delete session object
     req.session.destroy(function (err) {
       if (err) {
         return next(err);
       } else {
-        return res.redirect('/');
+        return res.redirect('/'); // LVSTODO: landing page after logout
       }
     });
   }
