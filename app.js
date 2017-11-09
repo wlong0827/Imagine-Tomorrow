@@ -10,16 +10,29 @@ const mongoose = require('mongoose');
 mongoose.promise = require('promise');
 const PostRecord = require('./src/client/app/models/post.js');
 const bodyParser = require('body-parser');
+var MongoStore = require('connect-mongo')(session);
 const app = express();
 const uri = 'mongodb://deploy:gdf876sdf789yfh32879fh82@ds141434.mlab.com:41434/main'
 //=========================//
+
+mongoose.connect(uri, function (err, db) {
+ if (err) {
+   console.log('Unable to connect to the mongoDB server. Error:', err);
+ } else {
+   console.log('Connection established to', uri);
+ }
+});
+let db = mongoose.connection;
 
 // Use the built-in express middleware for serving static files etc.
 app.use('/', express.static('src/client'));
 app.use(session({
   secret: 'wlonglvsch',
   resave: true,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
 }));
 app.use(bodyParser());
 
@@ -47,7 +60,15 @@ app.post('/api/create_post', function(req, res) {
   });
  });
 
-app.post('/auth/create_user', function(req, res) {
+app.post('/auth', function(req, res) {
+  // confirm that user typed same password twice
+  if (req.body.password !== req.body.passwordConf) {
+    var err = new Error('Passwords do not match.');
+    err.status = 400;
+    res.send("passwords dont match");
+    return next(err);
+  }
+
   if (req.body.email &&
   req.body.username &&
   req.body.password &&
@@ -63,18 +84,39 @@ app.post('/auth/create_user', function(req, res) {
       if (err) {
         return next(err)
       } else {
-        return res.redirect('/profile');
+        return res.redirect('/'); // LVSTODO: landing page after login
+      }
+    });
+
+  } else if (req.body.logemail && req.body.logpassword) {
+    User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
+      if (error || !user) {
+        var err = new Error('Wrong email or password.');
+        err.status = 401;
+        return next(err);
+      } else {
+        req.session.userId = user._id;
+        return res.redirect('/'); // LVSTODO: landing page after login
+      }
+    });
+  } else {
+    var err = new Error('All fields required.');
+    err.status = 400;
+    return next(err);
+  }
+});
+// GET for logout logout
+app.get('/logout', function (req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function (err) {
+      if (err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
       }
     });
   }
-})
-
-mongoose.connect(uri, function (err, db) {
- if (err) {
-   console.log('Unable to connect to the mongoDB server. Error:', err);
- } else {
-   console.log('Connection established to', uri);
- }
 });
 
 // Start the server
