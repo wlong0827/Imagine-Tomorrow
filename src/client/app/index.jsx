@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import VisionPost from './VisionPost.jsx';
+import VisionPage from './VisionPage.jsx';
 import customData from './test-data.json';
 
 class App extends React.Component {
