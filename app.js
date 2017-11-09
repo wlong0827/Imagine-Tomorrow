@@ -80,7 +80,6 @@ app.post('/auth/create', function(req, res) {
       email: req.body.email,
       username: req.body.username,
       password: req.body.password,
-      passwordConf: req.body.passwordConf,
     }
     //use schema.create to insert data into the db
     User.create(userData, function (err, user) {
