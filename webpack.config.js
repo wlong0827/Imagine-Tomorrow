@@ -6,8 +6,9 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
   entry: {
-      index : APP_DIR + '/index.jsx',
-      vpage : APP_DIR + '/vpage.jsx'
+      vwall : APP_DIR + '/vwall.jsx',
+      vpage : APP_DIR + '/vpage.jsx',
+      vcreate : APP_DIR + '/vcreate.jsx'
   },
   output: {
     path: BUILD_DIR,

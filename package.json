@@ -14,7 +14,7 @@
   "scripts": {
     "deploy": "gcloud app deploy",
     "build": "./node_modules/.bin/webpack -d",
-    "start": "node app.js",
+    "start": "npm build && node app.js",
     "lint": "samples lint",
     "pretest": "npm run lint",
     "system-test": "samples test app",
