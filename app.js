@@ -2,6 +2,7 @@
 
 //====LIST DEPENDENCIES===//
 const express = require('express');
+const session = require('express-session');
 const parseurl = require('parseurl');
 const path = require('path');
 const expressValidator = require('express-validator');
@@ -13,8 +14,13 @@ const app = express();
 const uri = 'mongodb://deploy:gdf876sdf789yfh32879fh82@ds141434.mlab.com:41434/main'
 //=========================//
 
-// Use the built-in express middleware for serving static files from './frontend'
+// Use the built-in express middleware for serving static files etc.
 app.use('/', express.static('src/client'));
+app.use(session({
+  secret: 'wlonglvsch',
+  resave: true,
+  saveUninitialized: false
+}));
 app.use(bodyParser());
 
 app.get('/api/get_posts', function(req, res) {
@@ -40,6 +46,28 @@ app.post('/api/create_post', function(req, res) {
     res.json(p);
   });
  });
+
+app.post('/auth/create_user', function(req, res) {
+  if (req.body.email &&
+  req.body.username &&
+  req.body.password &&
+  req.body.passwordConf) {
+    var userData = {
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password,
+      passwordConf: req.body.passwordConf,
+    }
+    //use schema.create to insert data into the db
+    User.create(userData, function (err, user) {
+      if (err) {
+        return next(err)
+      } else {
+        return res.redirect('/profile');
+      }
+    });
+  }
+})
 
 mongoose.connect(uri, function (err, db) {
  if (err) {
