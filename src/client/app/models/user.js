@@ -1,4 +1,4 @@
-ar mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
