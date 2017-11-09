@@ -9,7 +9,8 @@ const postSchema = new Schema({
   location:     String,
   endorsers:    Number,
   id:           String,
-  date:         Date
+  date:         Date,
+  posts:        Number,
 })
 
 const PostRecord = mongoose.model('PostRecord', postSchema);
