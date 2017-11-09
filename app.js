@@ -67,7 +67,7 @@ app.post('/auth/create', function(req, res) {
     var err = new Error('Passwords do not match.');
     err.status = 400;
     res.send("passwords dont match");
-    return next(err);
+    return res.send(err);
   }
 
   if (req.body.email &&
@@ -83,7 +83,7 @@ app.post('/auth/create', function(req, res) {
     //use schema.create to insert data into the db
     User.create(userData, function (err, user) {
       if (err) {
-        return next(err)
+        return res.send(err)
       } else {
         return res.redirect('/'); // LVSTODO: landing page after login
       }
@@ -92,16 +92,16 @@ app.post('/auth/create', function(req, res) {
   } else {
     var err = new Error('All fields required.');
     err.status = 400;
-    return next(err);
+    return res.send(err);
   }
 });
-app.post('/auth/login', function(req, res, next) {
+app.post('/auth/login', function(req, res) {
   if (req.body.logemail && req.body.logpassword) {
     User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
       if (error || !user) {
         var err = new Error('Wrong email or password.');
         err.status = 401;
-        return next(err);
+        return res.send(err);
       } else {
         req.session.userId = user._id;
         return res.redirect('/'); // LVSTODO: landing page after login
@@ -110,16 +110,16 @@ app.post('/auth/login', function(req, res, next) {
   } else {
     var err = new Error('All fields required.');
     err.status = 400;
-    return next(err);
+    return res.send(err);
   }
 });
 // GET for logout logout
-app.get('/auth/logout', function (req, res, next) {
+app.get('/auth/logout', function (req, res) {
   if (req.session) {
     // delete session object
     req.session.destroy(function (err) {
       if (err) {
-        return next(err);
+        return res.send(err);
       } else {
         return res.redirect('/'); // LVSTODO: landing page after logout
       }
