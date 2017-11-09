@@ -8,10 +8,10 @@ class VisionPage extends React.Component {
         this.state = {
             title : props.title,
             desc : props.desc,
-            name : props.name,
-            picture : props.picture,
-            role : props.role,
-            link : props.link,
+            name : props.user,
+            picture : "profile.jpg",
+            role : "Explorer",
+            link : "vision-page.html",
             details : {
                 interests : props.interests,
                 location : props.location,
@@ -25,15 +25,23 @@ class VisionPage extends React.Component {
     
     render() {
         return (
-          <section>
-              <section class="vbox">
-                <section class="scrollable wrapper">
-                   
-                    {this.state.title}
-                    
-                </section>
-              </section>
-            </section>
+            <div class="post-item">
+
+              <div class="caption wrapper-lg">
+                  <div class="col-lg-12 text-center">
+                      <h4>What We're Doing</h4>
+                      <hr></hr>
+                  </div>
+
+                <div class="post-sum text-center">
+                    <i class="fa fa-quote-left pull-left"></i>
+                    <br></br>
+                        <p>{this.state.desc}</p>
+                    <i class="fa fa-quote-right pull-right"></i>
+                </div>
+
+              </div>
+            </div>
       );
    }
 }

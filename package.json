@@ -13,7 +13,7 @@
   },
   "scripts": {
     "deploy": "gcloud app deploy",
-    "build": "babel src -d lib frontend",
+    "build": "./node_modules/.bin/webpack -d",
     "start": "node app.js",
     "lint": "samples lint",
     "pretest": "npm run lint",

@@ -4,16 +4,39 @@ import VisionPost from './VisionPost.jsx';
 import VisionPage from './VisionPage.jsx';
 import customData from './test-data.json';
 
+const axios = require('axios');
+
 class App extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: []
+        };
+    }
+    
+    componentDidMount() {
+        axios.get('/api/get_posts')
+          .then(res => {
+            this.setState({ posts: res.data });
+          });
+      }
+
+    
     render () {
+        
         const posts = [];
     
-        for(var key in customData) {
-            posts.push(<VisionPost {...customData[key]}/>);
+        console.log(this.state);
+        
+        for(let post of this.state.posts) {
+            console.log(post);
+            posts.push(<VisionPost {...post}/>);
         }
         
-        return (    
+        
+        return (               
             <div>
                 {posts}
                 <div class="text-center m-t-lg m-b-lg">

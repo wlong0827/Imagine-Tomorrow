@@ -8,15 +8,15 @@ class VisionPost extends React.Component {
         this.state = {
             title : props.title,
             desc : props.desc,
-            name : props.name,
-            picture : props.picture,
-            role : props.role,
-            link : props.link,
+            name : props.user,
+            picture : "profile.jpg",
+            role : "Visionary",
+            link : "vision-page.html",
             details : {
-                interests : props.interests,
+                interests : props.interests.join(', '),
                 location : props.location,
                 endorsers : props.endorsers,
-                posts : props.posts
+                posts : "100"
             },
             id : props.id,
             date : props.date  
