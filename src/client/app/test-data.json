@@ -1,0 +1,46 @@
+const data = {
+    post1: {
+        title : "Bread for Life in Amman",
+        desc : "Donations are a crucial part of our culture. And that's a great thing. However, in many cases, the fathers misuse the donated goods. So the giving culture isn't utilized, and those in need are still in need... My proposed solution is Bread For Life. I want to ensure that the donations collected feed 100 families on a daily basis and this is how.",
+        name : "Dania Abu-Hussein",
+        picture : "dania.jpg",
+        role : "Scholar",
+        link : "vision-page.html",
+        interests : "Economy",
+        location : "Jordan",
+        endorsers : "3",
+        posts : "8",
+        id : "1",
+        date : "2017-11-08"
+    },
+    post2: {
+        title : "Youth Refugee Assimilation Program",
+        desc : "Through our food ministry we have found that the greatest needs in the Refugee community are (ESL) classes and Work Training/Experience.  Because of this need, we have begun an ESL class, supplemented with Computers and the Rosetta Stone Language Software. We have also opened a Thrift Store to help provide work experience and job skills to our Refugee Friends. We of course will gladly accept donations of clothing, furniture and household items for our thrift store!",
+        name : "William Long",
+        picture : "profile.jpg",
+        role : "Visionary",
+        link : "vision-page.html",
+        interests : "Human Rights; Education",
+        location : "Egypt",
+        endorsers : "23",
+        posts : "64",
+        id : "2",
+        date : "2017-11-08"
+    },
+    post3: {
+        title : "How do we Rebuild Iraq?",
+        desc : "The inability of Arab leaders to draw the right lessons from Saddam's rise and collapse - after all, he was one of the Arab dictators himself - leads me to contemplate the sterility of their regimes. How do we rebuild after this?",
+        name : "Nebras Jemel",
+        picture : "nebras.jpg",
+        role : "Explorer",
+        link : "vision-page.html",
+        interests : "Politics; Environment",
+        location : "Iraq",
+        endorsers : "12",
+        posts : "83",
+        id : "3",
+        date : "2017-11-08"
+    }
+}
+
+export default data;

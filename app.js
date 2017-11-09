@@ -13,7 +13,7 @@ const uri = 'mongodb://deploy:fubviguibviqwbvkqj@ds141434.mlab.com:41434/test'
 //=========================//
 
 // Use the built-in express middleware for serving static files from './frontend'
-app.use('/static', express.static('frontend'));
+app.use('/', express.static('src/client'));
 
 app.get('/api/test', function(req, res) {
   Signature.find({}).then(eachOne => {

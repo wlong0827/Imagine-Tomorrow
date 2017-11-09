@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Spring | Vision Platform</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/icon.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />  
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="" >
+  <section class="vbox">
+    <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
+      <div class="navbar-header aside-lg dk">
+        <a href="vision-wall.html" class="navbar-brand">
+          <img src="images/logo.png" class="m-r-xs m-l-md" alt="scale">
+          <span class="hidden-nav-sm font-thin">Imagine Tomorrow</span>
+        </a>
+      </div>
+      
+      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-md bg-white b-white btn-icon"><i class="fa fa-search"></i></button>
+            </span>
+            <input type="text" class="form-control input-md no-border" placeholder="Search apps, projects...">            
+          </div>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+          <li class="hidden-xs">
+              <a href="about.html">
+                About HAAA
+              </a>
+          </li>
+          
+      </ul>      
+    </header>
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-black aside-lg hidden-print hidden-xs" id="nav">          
+          <section class="vbox">
+        
+            <section class="w-f scrollable">
+              <!-- nav -->
+              <div class=slim-scroll data-height=auto data-disable-fade-out=true data-distance=0 data-size=10px data-railOpacity=0.2>
+                
+                <div class="clearfix wrapper dk nav-user hidden-xs">
+                  <div class="dropdown">
+                    <a href="vision-profile.html">
+                      <span class="thumb avatar pull-left m-r">                        
+                        <img src="images/profile.jpg" class="dker" style="border:3px solid #16a085" alt="...">
+                      </span>
+                      <span class="hidden-nav-xs clear">
+                        <span class="block m-t-xs">
+                          <strong class="font-bold text-lt text-md">William Long</strong> 
+                        </span>
+                        <span class="text-muted text-sm font-bold block">Visionary</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+  
+                <!-- nav -->                 
+                <nav class="nav-primary hidden-xs">
+                  <div class="text-muted text-lg hidden-nav-xs padder m-t-sm m-b-sm">Filters</div>
+                  <ul class="nav nav-main" data-ride="collapse">
+                    <li >
+                      <a href="#" class="auto">
+                        <i class="i i-params icon">
+                        </i>
+                        <span class="font-bold">Show all</span>
+                      </a>
+                    </li>
+                    <li >
+                      <a href="#" class="auto">
+<!--                        <i class="i i-circle-sm text-danger pull-right"></i>-->
+                        <i class="i i-user3 icon">
+                        </i>
+                        <span class="font-bold">Personal</span>
+                      </a>
+                      <ul class="nav dk">
+                        <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>My Visions</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                                                
+                            <i class="i i-dot"></i>
+
+                            <span>Funded by Me</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                      
+                    <li >
+                      <a href="#" class="auto">
+                          <i class="i i-circle-sm text-danger pull-right"></i>
+                        <i class="i i-heart2 icon">
+                        </i>
+                        <span class="font-bold">Interests</span>
+                      </a>
+                      <ul class="select nav dk" multiple="multiple">
+                        <li >
+                          <a href="#" class="auto">  
+                            <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+                            <span>Education</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                                                  <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+
+                            <span>Health</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto"> 
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+                            <span>Economy and Finance</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                                                   <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+
+                            <span>Food and Agriculture</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">  
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+
+                            <span>Environment</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                                                   <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+
+                            <span>Human Rights</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">  
+                            <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+                            <span>Entrepreneurship</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">  
+                            <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+                            <span>Arts and Culture</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">  
+                            <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <i class="i i-dot"></i>
+                            <span>Science and Technology</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                      
+                    <li >
+                      <a href="#" class="auto">
+                        <i class="i i-circle-sm text-danger pull-right"></i>
+                        <i class="i i-earth icon">
+                        </i>
+                        <span class="font-bold">Locations</span>
+                      </a>
+                      <ul class="nav dk">
+                        <li >
+                          <a href="#" class="auto">         
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Worldwide</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Algeria</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Bahrain</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Egypt</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Iraq</span>
+                          </a>
+                        </li>
+                        <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Jordan</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Kuwait</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Lebanon</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Libya</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Mauritania</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Morocco</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Oman</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Palestine</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Qatar</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Saudi Arabia</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Somalia</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Sudan</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Syria</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Tunisia</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>United Arab Emirates</span>
+                          </a>
+                        </li>
+                          <li >
+                          <a href="#" class="auto">                                                        
+                            <i class="i i-dot"></i>
+                              <span class="pull-right text-muted">
+                              <i class="i i-circle-sm text-active"></i>
+                            </span>
+                            <span>Yemen</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- / nav -->
+              </div>
+              <!-- / nav -->
+            </section>
+            
+            <footer class="footer hidden-xs no-padder text-center-nav-xs">
+              <a href="vision-landing.html" data-toggle="ajaxModal" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
+                <i class="i i-logout"></i>
+              </a>
+              <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
+                <i class="i i-circleleft text"></i>
+                <i class="i i-circleright text-active"></i>
+              </a>
+            </footer>
+      </section>
+            
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="hbox stretch">
+            <section>
+              <section class="vbox">
+                  
+                <header class="header bg-light lt b-b b-light">
+                  <a href="vision-page.html" class="btn btn-sm btn-default pull-left btn-rounded"><i class="fa fa-arrow-circle-left"></i> &nbsp;Back to Vision</a>
+                    <div class="col-lg-8" style="top:5px">
+                        <h4 class="post-title"><a href="vision-page.html"><font color="#16a085">Ideation Forum:</font> How do we Rebuild Iraq? </a></h4>
+                    </div>
+                     
+                </header>
+                  
+                <section class="w-f scrollable wrapper">              
+                    <section class="chat-list">
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/nebras.jpg" style="border:3px solid #fcc633"></a>
+                        <section class="chat-body">
+                          <div class="panel b-light text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Hi guys, what's up?</p>
+                            </div>
+                          </div>
+                          <small class="text-muted"><i class="fa fa-ok text-success"></i> 1 hour ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 1</i></a>
+                        </section>
+                      </article>
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/profile.jpg" style="border:3px solid #16a085" class="img-circle"></a>
+                        <section class="chat-body">                      
+                          <div class="panel b-light dk text-sm m-b-none">
+                            <div class="panel-heading b-b b-light">
+                              <a href="#" data-toggle="class" class="pull-right m-l-sm m-t-xs"><i class="i i-pause i-lg text-muted text"></i><i class="i i-play i-lg text-muted text-active"></i></a>
+                              <span class="pull-right m-r-sm m-t-xs"><i class="i i-pictures i-lg text-muted"></i></span>
+                              <div class="clear">
+                                <div class="progress progress-xs progress-striped active m-b-none m-t-sm">
+                                  <div class="progress-bar bg-info dk" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
+                                </div>
+                                <span>abc.jpg</span>
+                              </div>
+                            </div>
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Lorem ipsum dolor sit amet, conse <br>adipiscing eli...<br>:)</p>
+                            </div>
+                          </div>
+                          <small class="text-muted">30 minutes ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 0</i></a>
+                        </section>
+                      </article>  
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/dania.jpg" style="border:3px solid #a94442"></a>
+                        <section class="chat-body">
+                          <div class="panel b-light text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Phasellus at ultricies neque, quis malesuada augue. <br>  quis malesuada augue, <i class="fa fa-lg fa-smile-o text-success"></i></p>
+                            </div>
+                          </div>
+                          <small class="text-muted"><i class="fa fa-ok text-success"></i> 12 minutes ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 0</i></a>
+                        </section>
+                      </article>
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/profile.jpg" style="border:3px solid #16a085" class="img-circle"></a>
+                        <section class="chat-body">                      
+                          <div class="panel b-light dk text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Donec eleifend condimentum nisl eu consectetur. </p>
+                            </div>
+                          </div>
+                          <small class="text-muted">5 minutes ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 0</i></a>
+                        </section>
+                      </article>
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/profile.jpg" style="border:3px solid #16a085" class="img-circle"></a>
+                        <section class="chat-body">                      
+                          <div class="panel b-light dk text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.</p>
+                            </div>
+                          </div>
+                          <small class="text-muted">3 minutes ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 0</i></a>
+                        </section>
+                      </article>
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/nebras.jpg" style="border:3px solid #fcc633"></a>
+                        <section class="chat-body">
+                          <div class="panel b-light text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Malesuada augue. </p>
+                            </div>
+                          </div>
+                          <small class="text-muted"><i class="fa fa-ok text-success"></i> 2 minutes ago</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 2</i></a>
+                        </section>
+                      </article>
+                      <article class="chat-item right">
+                        <a href="#" class="pull-right thumb-sm avatar"><img src="images/profile.jpg" class="img-circle" style="border:3px solid #16a085"></a>
+                        <section class="chat-body">                      
+                          <div class="panel b-light dk text-sm m-b-none">
+                            <div class="panel-body">
+                              <span class="arrow right"></span>
+                              <p class="m-b-none">Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.</p>
+                            </div>
+                          </div>
+                          <small class="text-muted">Now</small>
+                            <a href="#"><i class="fa fa-arrow-circle-up pull-right text-muted" style="margin-right:5px"> 0</i></a>
+                        </section>
+                      </article>                  
+                    </section>                    
+                </section>
+                <footer class="footer bg-light lt b-t b-light">
+                  <form action="" class="m-t-sm">
+                    <div class="input-group">
+                      <input type="text" class="form-control input-sm rounded" placeholder="Say something">
+                      <span class="input-group-btn">
+                        <button class="btn btn-sm btn-danger font-bold btn-rounded" type="button">Send</button>
+                      </span>
+                    </div>
+                  </form>
+                </footer>
+              </section>
+            </section>
+            <!-- side content -->
+            <aside class="aside-md bg-primary dker" id="sidebar">
+              <section class="vbox animated fadeInRight">
+                <section class="scrollable">
+                  <h4 class="font-thin text-white padder m-b-none m-t">Participants</h4>
+                  <div class="wrapper text-u-c"><strong>Endorsers</strong>
+                      <a href="#" class="pull-right m-t-sm">
+                          <span class="badge badge-empty" style="margin-top:-22px">3</span>
+                        </a>
+                    </div>
+                  <ul class="list-group no-bg no-borders auto m-b-none">
+                    <li class="list-group-item">
+                      <div class="media">
+                        <span class="pull-right thumb-sm avatar">
+                          <img src="images/profile.jpg" style="border:3px solid #16a085" alt="..." class="img-circle">
+                          
+                        </span>
+                        <div class="media-body">
+                          <div><a href="#">William Long</a></div>
+                          <small class="text-muted">Visionary</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="media">
+                        <span class="pull-right thumb-sm avatar">
+                          <img src="images/nebras.jpg" style="border:3px solid #fcc633" alt="...">
+                        
+                        </span>
+                        <div class="media-body">
+                          <div><a href="#">Nebras Jemel</a></div>
+                          <small class="text-muted">Expert</small>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="media">
+                        <span class="pull-right thumb-sm avatar">
+                          <img src="images/dania.jpg" style="border:3px solid #a94442" alt="...">
+                          
+                        </span>
+                        <div class="media-body">
+                          <div><a href="#">Dania Abu-Hussein</a></div>
+                          <small class="text-muted">Explorer</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  
+                </section>
+              </section>              
+            </aside>
+            <!-- / side content -->
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>  
+  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/app.plugin.js"></script>
+</body>
+</html>
