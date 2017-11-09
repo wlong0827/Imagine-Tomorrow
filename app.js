@@ -9,6 +9,7 @@ const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 mongoose.promise = require('promise');
 const PostRecord = require('./src/client/app/models/post.js');
+const User = require('./src/client/app/models/user.js');
 const bodyParser = require('body-parser');
 var MongoStore = require('connect-mongo')(session);
 const app = express();
