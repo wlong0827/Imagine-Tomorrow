@@ -3,34 +3,48 @@
 //====LIST DEPENDENCIES===//
 const express = require('express');
 const parseurl = require('parseurl');
-const bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
-const Post = require('./src/client/app/models/post.js');
+mongoose.promise = require('promise');
+const PostRecord = require('./src/client/app/models/post.js');
+const bodyParser = require('body-parser');
 const app = express();
-const uri = 'mongodb://deploy:fubviguibviqwbvkqj@ds141434.mlab.com:41434/test'
+const uri = 'mongodb://deploy:gdf876sdf789yfh32879fh82@ds141434.mlab.com:41434/main'
 //=========================//
 
 // Use the built-in express middleware for serving static files from './frontend'
 app.use('/', express.static('src/client'));
+app.use(bodyParser());
 
 app.get('/api/get_posts', function(req, res) {
-  Post.find({}).then(eachOne => {
+  PostRecord.find({}).then(eachOne => {
     res.json(eachOne);
     })
   })
 app.post('/api/create_post', function(req, res) {
-  Post.create(req.body).then(retObj => {
-    res.json(retObj)
+  const p = new PostRecord();
+  p.title = req.body.title;
+  p.desc = req.body.desc;
+  p.user = req.body.user;
+  p.interests = req.body.interests;
+  p.location = req.body.location;
+  p.endorsers = req.body.endorsers;
+  p.id = req.body.id;
+  p.date = req.body.date;
+  p.save(function(err) {
+    if (err) {
+      res.send(err);
+    }
+    res.json(p);
   });
-});
+ });
 
-mongoose.connect(uri, { useMongoClient: true }).then(function (err, db) {
+mongoose.connect(uri, function (err, db) {
  if (err) {
    console.log('Unable to connect to the mongoDB server. Error:', err);
  } else {
-   console.log('Connection established to', url);
+   console.log('Connection established to', uri);
  }
 });
 
