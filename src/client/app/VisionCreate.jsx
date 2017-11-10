@@ -41,7 +41,43 @@ class VisionCreate extends React.Component {
     }
     
     handleSubmit(event) {
+//        var keys = Object.keys(this.state);
+//        
+//        var filtered = keys.filter(function(key) {
+//            return this.state[key]
+//        });
+//        
+//        var vision = {
+//            title : this.state.title,
+//            desc : this.state.desc,
+//            user : {
+//                name : "name",
+//                picture : "profile.jpg",
+//                role : "Visionary"
+//            },
+//            link : "vision-page.html",
+//            details : {
+//                interests : filtered.join(', '),
+//                location : this.state.country,
+//                endorsers : this.state.endorsers,
+//                posts : "100"
+//            },
+//            id : 1,
+//            date : "date"  
+//        }
+        
         alert('Form submitted ' + JSON.stringify(this.state));
+        
+//        axios.post('/api/create_post', {
+//            vision
+//          })
+//        .then(response => {
+//          console.log(response, 'Posted!');
+//        })
+//        .catch(err => {
+//          console.log(err, 'Not posted, try again');
+//        });
+        
         event.preventDefault();
     }
     
