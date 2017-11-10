@@ -54,7 +54,7 @@ class VisionPost extends React.Component {
             <div class="text-muted">
               <i class="fa fa-heart icon-muted"></i> {this.state.details.interests} &nbsp;&nbsp;
               <i class="fa fa-globe icon-muted"></i> {this.state.details.location} &nbsp;&nbsp;
-              <i class="fa fa-users icon-muted"></i> {this.state.details.endorsements} Endorsements &nbsp;&nbsp;
+              <i class="fa fa-users icon-muted"></i> 1 Endorsement(s) &nbsp;&nbsp;
               <i class="fa fa-comment-o icon-muted"></i> {this.state.details.posts} Posts
             </div>
           </div>

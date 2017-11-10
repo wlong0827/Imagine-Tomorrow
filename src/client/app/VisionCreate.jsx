@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 class VisionCreate extends React.Component {
     
@@ -8,21 +9,21 @@ class VisionCreate extends React.Component {
         this.state = {
             title : '',
             desc : '',
-            country : '',
-            education : false,
-            health : false,
-            economy : false,
-            food : false,
-            environment : false,
-            rights : false,
-            entrepreneurship : false,
-            arts : false,
-            science : false,
+            Country : '',
+            Education : false,
+            Health : false,
+            Economy : false,
+            Food : false,
+            Environment : false,
+            Rights : false,
+            Entrepreneurship : false,
+            Arts : false,
+            Science : false,
             fundraising : '',
             facebook : '',
             chat : '',
             other : '',
-            guidelines : false
+            endorsers : 1,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -41,44 +42,40 @@ class VisionCreate extends React.Component {
     }
     
     handleSubmit(event) {
-//        var keys = Object.keys(this.state);
-//        
-//        var filtered = keys.filter(function(key) {
-//            return this.state[key]
-//        });
-//        
-//        var vision = {
-//            title : this.state.title,
-//            desc : this.state.desc,
-//            user : {
-//                name : "name",
-//                picture : "profile.jpg",
-//                role : "Visionary"
-//            },
-//            link : "vision-page.html",
-//            details : {
-//                interests : filtered.join(', '),
-//                location : this.state.country,
-//                endorsers : this.state.endorsers,
-//                posts : "100"
-//            },
-//            id : 1,
-//            date : "date"  
-//        }
-        
-        alert('Form submitted ' + JSON.stringify(this.state));
-        
-//        axios.post('/api/create_post', {
-//            vision
-//          })
-//        .then(response => {
-//          console.log(response, 'Posted!');
-//        })
-//        .catch(err => {
-//          console.log(err, 'Not posted, try again');
-//        });
-        
         event.preventDefault();
+        
+        var keys = Object.keys(this.state);
+        
+        var filtered = keys.filter((key) => {
+            return this.state[key] === true
+        });
+        
+        var vision = {
+            title : this.state.title,
+            desc : this.state.desc,
+            user : "William Long",
+            interests : filtered,
+            location : this.state.country,
+            endorsers : this.state.endorsers,
+            id : 1,
+            date : "2017-11-05",
+            posts : "100"
+        }
+        
+        /*
+        alert('Form submitted ' + JSON.stringify(this.state));
+        console.log(vision);
+        */
+        
+        axios.post('/api/create_post', 
+            vision
+          )
+        .then(response => {
+          console.log(response, 'Posted!');
+        })
+        .catch(err => {
+          console.log(err, 'Not posted, try again');
+        });
     }
     
     render() {
@@ -114,63 +111,63 @@ class VisionCreate extends React.Component {
                 <div class="form-group">
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.education} onChange={this.handleInputChange} name="education"></input>
+                          <input type="checkbox" checked={this.state.education} onChange={this.handleInputChange} name="Education"></input>
                           <i></i>
                         Education
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.health} onChange={this.handleInputChange} name="health"></input>
+                          <input type="checkbox" checked={this.state.health} onChange={this.handleInputChange} name="Health"></input>
                           <i></i>
                         Health
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.economy} onChange={this.handleInputChange} name="economy"></input>
+                          <input type="checkbox" checked={this.state.economy} onChange={this.handleInputChange} name="Economy"></input>
                           <i></i>
                         Economy and Finance
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.food} onChange={this.handleInputChange} name="food"></input>
+                          <input type="checkbox" checked={this.state.food} onChange={this.handleInputChange} name="Food"></input>
                           <i></i>
                         Food and Agriculture
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.environment} onChange={this.handleInputChange} name="environment"></input>
+                          <input type="checkbox" checked={this.state.environment} onChange={this.handleInputChange} name="Environment"></input>
                           <i></i>
                         Environment
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.rights} onChange={this.handleInputChange} name="rights"></input>
+                          <input type="checkbox" checked={this.state.rights} onChange={this.handleInputChange} name="Rights"></input>
                           <i></i>
                         Human Rights
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.entrepreneurship} onChange={this.handleInputChange} name="entrepreneurship"></input>
+                          <input type="checkbox" checked={this.state.entrepreneurship} onChange={this.handleInputChange} name="Entrepreneurship"></input>
                           <i></i>
                         Entrepreneurship
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.arts} onChange={this.handleInputChange} name="arts"></input>
+                          <input type="checkbox" checked={this.state.arts} onChange={this.handleInputChange} name="Arts"></input>
                           <i></i>
                         Arts and Culture
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.science} onChange={this.handleInputChange} name="science"></input>
+                          <input type="checkbox" checked={this.state.science} onChange={this.handleInputChange} name="Science"></input>
                           <i></i>
                         Science and Technology
                       </label>
@@ -233,7 +230,7 @@ class VisionCreate extends React.Component {
 
                         <div class="checkbox i-checks">
                           <label>
-                              <input type="checkbox" checked={this.state.guidelines} onChange={this.handleInputChange} name="guidelines" data-required="true"></input>
+                              <input type="checkbox" checked name="Guidelines" data-required="true"></input>
                               <i></i>I agree to the <a href="about.html" class="text-info">Guidelines</a>
                           </label>
                         </div>

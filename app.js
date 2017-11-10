@@ -52,12 +52,13 @@ app.post('/api/create_post', function(req, res) {
   p.endorsers = req.body.endorsers;
   p.id = req.body.id;
   p.date = req.body.date;
-  p.posts = req.body.number;
+  p.posts = req.body.posts;
   p.save(function(err) {
     if (err) {
       res.send(err);
+    } else {
+        res.json(p);
     }
-    res.json(p);
   });
  });
 
