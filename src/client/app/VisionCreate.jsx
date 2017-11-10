@@ -6,9 +6,9 @@ class VisionCreate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title : 'title',
-            desc : 'desc',
-            country : 'country',
+            title : '',
+            desc : '',
+            country : '',
             education : false,
             health : false,
             economy : false,
@@ -16,12 +16,12 @@ class VisionCreate extends React.Component {
             environment : false,
             rights : false,
             entrepreneurship : false,
-            art : false,
+            arts : false,
             science : false,
-            fundraising : 'fundraising',
-            facebook : 'facebook',
-            chat : 'chat',
-            other : 'other',
+            fundraising : '',
+            facebook : '',
+            chat : '',
+            other : '',
             guidelines : false
         };
 
@@ -30,6 +30,7 @@ class VisionCreate extends React.Component {
     }
     
     handleInputChange(event) {
+        
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -40,7 +41,7 @@ class VisionCreate extends React.Component {
     }
     
     handleSubmit(event) {
-        alert('Form submitted ' + this.state.join(', '));
+        alert('Form submitted ' + JSON.stringify(this.state));
         event.preventDefault();
     }
     
@@ -67,9 +68,9 @@ class VisionCreate extends React.Component {
                     <div class="tab-content">
                       <div class="tab-pane " id="step1">                            
                         <p>Vision Title:</p>
-                          <input name="title" value={this.state.title} onChange={this.handleInputChange} type="text" class="form-control" data-trigger="change" data-required="true" placeholder="e.g. Assimilating Youth Refugees"></input>
+                          <input value={this.state.title} onChange={this.handleInputChange} type="text" class="form-control" data-trigger="change" name="title" data-required="true" placeholder="e.g. Assimilating Youth Refugees"></input>
                         <p class="m-t">Vision Description:</p>
-                          <textarea value={this.state.desc} onChange={this.handleInputChange} class="form-control" rows="5" data-minwords="6" data-required="true" placeholder="Through our food ministry we have found that the greatest needs in the Refugee community are (ESL) classes and Work Training/Experience. Because of this need, we have begun an ESL class, supplemented with Computers and the Rosetta Stone Language Software. We have also opened a Thrift Store to help provide work experience and job skills to our Refugee Friends. We of course will gladly accept donations of clothing, furniture and household items for our thrift store!"></textarea>
+                          <textarea value={this.state.desc} onChange={this.handleInputChange} class="form-control" rows="5" data-minwords="6" data-required="true" name="desc" placeholder="Through our food ministry we have found that the greatest needs in the Refugee community are (ESL) classes and Work Training/Experience. Because of this need, we have begun an ESL class, supplemented with Computers and the Rosetta Stone Language Software. We have also opened a Thrift Store to help provide work experience and job skills to our Refugee Friends. We of course will gladly accept donations of clothing, furniture and household items for our thrift store!"></textarea>
                       </div>
 
                     <div class="tab-pane" id="step2">
@@ -77,70 +78,70 @@ class VisionCreate extends React.Component {
                 <div class="form-group">
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.education} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.education} onChange={this.handleInputChange} name="education"></input>
+                          <i></i>
                         Education
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.health} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.health} onChange={this.handleInputChange} name="health"></input>
+                          <i></i>
                         Health
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.economy} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.economy} onChange={this.handleInputChange} name="economy"></input>
+                          <i></i>
                         Economy and Finance
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.food} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.food} onChange={this.handleInputChange} name="food"></input>
+                          <i></i>
                         Food and Agriculture
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.environment} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.environment} onChange={this.handleInputChange} name="environment"></input>
+                          <i></i>
                         Environment
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.rights} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.rights} onChange={this.handleInputChange} name="rights"></input>
+                          <i></i>
                         Human Rights
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.entrepreneurship} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.entrepreneurship} onChange={this.handleInputChange} name="entrepreneurship"></input>
+                          <i></i>
                         Entrepreneurship
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.arts} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.arts} onChange={this.handleInputChange} name="arts"></input>
+                          <i></i>
                         Arts and Culture
                       </label>
                     </div>
                     <div class="checkbox i-checks">
                       <label>
-                          <input type="checkbox" checked={this.state.science} onChange={this.handleInputChange}></input>
-                        <i></i>
+                          <input type="checkbox" checked={this.state.science} onChange={this.handleInputChange} name="science"></input>
+                          <i></i>
                         Science and Technology
                       </label>
                     </div>
                     </div>
                     <p>Country:</p>
-                    <select class="form-control" data-required="true" value={this.state.country} onChange={this.handleInputChange}>
+                    <select class="form-control" data-required="true" value={this.state.country} onChange={this.handleInputChange} name="country">
                         <option>Algeria</option>
                         <option>Bahrain</option>
                         <option>Egypt</option>
@@ -170,41 +171,42 @@ class VisionCreate extends React.Component {
                           <span class="input-group-addon">
                             <i class="fa fa-money"></i>
                           </span>
-                              <input type="text" value={this.state.fundraising} onChange={this.handleInputChange}  class="form-control" placeholder="e.g. www.gofundme.com/myproject"></input>
+                              <input type="text" value={this.state.fundraising} onChange={this.handleInputChange}  class="form-control" name="fundraising" placeholder="e.g. www.gofundme.com/myproject"></input>
                         </div>
 
                         <div class="input-group m-b">
                           <span class="input-group-addon">
                             <i class="fa fa-facebook"></i>
                           </span>
-                              <input type="text" value={this.state.facebook} onChange={this.handleInputChange}  class="form-control" placeholder="e.g. Facebook Events/Groups"></input>
+                              <input type="text" value={this.state.facebook} onChange={this.handleInputChange}  class="form-control" name="facebook" placeholder="e.g. Facebook Events/Groups"></input>
                         </div>
 
                         <div class="input-group m-b">
                           <span class="input-group-addon">
                             <i class="fa fa-comments"></i>
                           </span>
-                              <input type="text" value={this.state.chat} onChange={this.handleInputChange} class="form-control" placeholder="e.g. groupme.com/mygroup"></input>
+                              <input type="text" value={this.state.chat} onChange={this.handleInputChange} class="form-control" name="chat" placeholder="e.g. groupme.com/mygroup"></input>
                         </div>
 
                         <div class="input-group m-b">
                           <span class="input-group-addon">
                             <i class="fa fa-desktop"></i>
                           </span>
-                              <input type="text" value={this.state.other} onChange={this.handleInputChange}  class="form-control" placeholder="e.g. Other Websites"></input>
+                              <input type="text" value={this.state.other} onChange={this.handleInputChange} name="other" class="form-control" placeholder="e.g. Other Websites"></input>
                         </div>
 
                         <div class="checkbox i-checks">
                           <label>
-                              <input type="checkbox" checked={this.state.guidelines} onChange={this.handleInputChange} name="check" checked data-required="true"></input> I agree to the <a href="about.html" class="text-info">Guidelines</a>
+                              <input type="checkbox" checked={this.state.guidelines} onChange={this.handleInputChange} name="guidelines" data-required="true"></input>
+                              <i></i>I agree to the <a href="about.html" class="text-info">Guidelines</a>
                           </label>
                         </div>
                     </div>
                             
                         <div class="tab-pane text-center" id="step4">
-                            <h4 class="font-thin m-t-xl">Congrats! Your Vision has been Posted!</h4>
+                            <h4 class="font-thin m-t-xl">Congrats! Your Vision is ready to be posted!</h4>
                             <div class="row m-t-lg">
-                                <button class="btn btn-rounded btn-sm btn-success" action="submit"><i class="fa fa-fw fa-check-square-o"></i> See your Vision Now</button>
+                                <button class="btn btn-rounded btn-sm btn-success" action="submit"><i class="fa fa-fw fa-check-square-o"></i> Post my Vision Now</button>
                             </div>
                         </div>
 

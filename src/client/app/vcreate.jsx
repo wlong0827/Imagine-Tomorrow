@@ -8,31 +8,43 @@ class VCreate extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: 'coconut'};
     }
     
+    var vision = {
+        title : props.title,
+        desc : props.desc,
+        user : {
+            name : props.user,
+            picture : "profile.jpg",
+            role : "Visionary"
+        },
+        link : "vision-page.html",
+        details : {
+            interests : props.interests.join(', '),
+            location : props.location,
+            endorsers : props.endorsers,
+            posts : "100"
+        },
+        id : props.id,
+        date : props.date  
+    }
 //    componentDidMount() {
-//        axios.get('/api/get_posts')
-//          .then(res => {
-//            this.setState({ posts: res.data });
-//          });
+//        axios.post('/api/create_post', {
+//            [json object to create here]
+//          })
+//        .then(response => {
+//          console.log(response, 'Signature added!');
+//        })
+//        .catch(err => {
+//          console.log(err, 'Signature not added, try again');
+//        });
 //      }
-
     
     render () {
         
-        const posts = [];
-    
-        console.log(this.state);
-        
-        for(let post of this.state.value) {
-            posts.push(<VisionCreate {...post}/>);
-        }
-        
-        
         return (               
             <div>
-                <VisionCreate {...posts} />
+                <VisionCreate />
             </div>            
         );
     }
