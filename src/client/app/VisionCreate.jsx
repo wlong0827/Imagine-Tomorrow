@@ -62,11 +62,6 @@ class VisionCreate extends React.Component {
             posts : "100"
         }
         
-        /*
-        alert('Form submitted ' + JSON.stringify(this.state));
-        console.log(vision);
-        */
-        
         axios.post('/api/create_post', 
             vision
           )
